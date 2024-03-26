@@ -6,15 +6,22 @@
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>@yield('title')</title>
+
     @yield('css')
 
+
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('Backend/assets/images/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ URL::asset('Backend/assets/images/favicon.ico') }}" />
 
     <!-- Font -->
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900">
+    <link href="{{asset('Backend/assets/css/fontawesome/css/all.css')}}" rel="stylesheet">
 
-    <!-- css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('Backend/assets/css/style.css') }}" />
+    <!--- Style css -->
+    @if (App::getLocale() == 'en')
+        <link href="{{ URL::asset('Backend/assets/css/ltr.css') }}" rel="stylesheet">
+    @else
+        <link href="{{ URL::asset('Backend/assets/css/rtl.css') }}" rel="stylesheet">
+    @endif
+
 
 </head>

@@ -20176,7 +20176,7 @@ ul.list-unstyled li {
   opacity: 0;
   visibility: hidden;
   margin-top: 10px;
-  background-color: #2f3243;
+  background-color: #2f3243 !important;
   -webkit-box-shadow: 1px 1px 15px rgba(22, 23, 33, 0.4);
   -moz-box-shadow: 1px 1px 15px rgba(22, 23, 33, 0.4);
   box-shadow: 1px 1px 15px rgba(22, 23, 33, 0.4);
@@ -20194,7 +20194,7 @@ ul.list-unstyled li {
   .admin-header .dropdown .dropdown-menu .dropdown-divider {
     border-color: #4e5165; }
   .admin-header .dropdown .dropdown-menu .dropdown-item {
-    color: #9295a2; }
+    color: #fff !important; }
     .admin-header .dropdown .dropdown-menu .dropdown-item:hover {
       background-color: rgba(0, 0, 0, 0.2); }
     .admin-header .dropdown .dropdown-menu .dropdown-item:focus {
