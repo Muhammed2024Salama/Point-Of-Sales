@@ -1,7 +1,7 @@
 @extends('layouts.Backend.master')
 
 @section('title')
-    dashboard
+    Point Of Sales
 @endsection
 
 @section('css')

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -18,12 +19,19 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' , 'auth' ]
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'  ]
     ], function(){ //...
     Route::get('/dashboard', function () {
         return view('Backend.dashboard');
     })->name('dashboard');
+
+
+    /**
+     * Route categories
+     */
+    Route::resource('categories',CategoryController::class);
+
+    require __DIR__.'/auth.php';
 });
 
 
-require __DIR__.'/auth.php';
