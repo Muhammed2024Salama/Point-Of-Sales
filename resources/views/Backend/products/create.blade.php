@@ -33,14 +33,14 @@
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label> {{ trans('backend/products.Product name in Arabic') }}</label>
+                                <label> {{ trans('backend/products.Products name in Arabic') }}</label>
                                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" >
                                 @error('name')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label> {{ trans('backend/products.Product name in English') }}   </label>
+                                <label> {{ trans('backend/products.Products name in English') }}   </label>
                                 <input type="text" name="name_en" class="form-control @error('name_en') is-invalid @enderror">
                                 @error('name_en')
                                 <div class="alert alert-danger">{{ $message }}</div>
@@ -60,7 +60,7 @@
 
                             </div>
                             <div class="form-group col-md-6">
-                                <label>{{ trans('backend/products.Product price') }} </label>
+                                <label>{{ trans('backend/products.Products price') }} </label>
                                 <input type="number" name="price" class="form-control @error('price') is-invalid @enderror">
                                 @error('price')
                                 <div class="alert alert-danger">{{ $message }}</div>

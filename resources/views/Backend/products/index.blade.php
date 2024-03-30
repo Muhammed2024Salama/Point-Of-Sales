@@ -30,7 +30,7 @@
             <div class="card card-statistics h-100">
                 <div class="card-body">
 
-                    {{-- button Add new Product --}}
+                    {{-- button Add new Products --}}
                     <div class="row">
                         <div class="col mb-3">
                             <a href="{{route('products.create')}}" class="btn btn-success" role="button" aria-pressed="true">{{ trans('backend/products.Add new product') }}  </a>
@@ -43,7 +43,7 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ trans('backend/products.Product name') }} </th>
+                                <th>{{ trans('backend/products.Products name') }} </th>
                                 <th>{{ trans('backend/products.Price') }}</th>
                                 <th>{{ trans('backend/products.Section name') }} </th>
                                 <th>{{ trans('backend/products.Notes') }}</th>

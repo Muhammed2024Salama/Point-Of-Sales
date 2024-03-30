@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Pos\Products\Controllers;
 
-use App\Http\Requests\StoreProductsRequest;
-use App\Models\Category;
-use App\Models\Product;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Pos\Categories\Models\Category;
+use Pos\Products\Models\Product;
+use Pos\Products\Requests\StoreProductsRequest;
 
 class ProductController extends Controller
 {
@@ -40,7 +41,7 @@ class ProductController extends Controller
                 'category_id'=>$request->category_id,
                 'notes'=>$request->notes,
             ]);
-            session()->flash('Add', trans('backend/products.Product added successfully') );
+            session()->flash('Add', trans('backend/products.Products added successfully') );
             return redirect()->back();
 
         }

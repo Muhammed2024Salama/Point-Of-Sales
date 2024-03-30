@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Pos\Categories\Controllers;
 
-use App\Http\Requests\StoreCategoriesRequest;
-use App\Models\Category;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Pos\Categories\Models\Category;
+use Pos\Categories\Requests\StoreCategoriesRequest;
 
 class CategoryController extends Controller
 {

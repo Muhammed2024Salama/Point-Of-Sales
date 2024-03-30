@@ -1,7 +1,7 @@
 @extends('layouts.backend.master')
 
 @section('title')
-    {{ trans('backend/products.Edit Product') }}
+    {{ trans('backend/products.Edit Products') }}
 @endsection
 
 @section('css')
@@ -14,7 +14,7 @@
     <div class="page-title">
         <div class="row">
             <div class="col-sm-6">
-                <h4 class="mb-0">{{ trans('backend/products.Edit Product') }}  </h4>
+                <h4 class="mb-0">{{ trans('backend/products.Edit Products') }}  </h4>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
@@ -34,7 +34,7 @@
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>{{ trans('backend/products.Product name in Arabic') }}   </label>
+                                <label>{{ trans('backend/products.Products name in Arabic') }}   </label>
                                 <input type="text" name="name" value="{{$product->getTranslation('name','ar')}}" class="form-control @error('name') is-invalid @enderror">
                                 {{-- Input hidden id --}}
                                 <input type="hidden" name="id" value="{{$product->id}}">
@@ -43,7 +43,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label>{{ trans('backend/products.Product name in English') }}   </label>
+                                <label>{{ trans('backend/products.Products name in English') }}   </label>
                                 <input type="text" name="name_en" value="{{$product->getTranslation('name','en')}}" class="form-control @error('name_en') is-invalid @enderror" required>
                                 @error('name_en')
                                 <div class="alert alert-danger">{{ $message }}</div>
@@ -53,7 +53,7 @@
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>{{ trans('backend/products.Product name') }} </label>
+                                <label>{{ trans('backend/products.Products name') }} </label>
                                 <select name="category_id" id="" class="form-control p-1">
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}" {{$category->id == $product->category_id ? 'selected' : ''}}>{{$category->name}}</option>
@@ -61,7 +61,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>{{ trans('backend/products.Product price') }} </label>
+                                <label>{{ trans('backend/products.Products price') }} </label>
                                 <input type="number" name="price" value="{{$product->price}}" class="form-control @error('price') is-invalid @enderror">
                                 @error('price')
                                 <div class="alert alert-danger">{{ $message }}</div>

@@ -595,7 +595,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Modal Add Category -->
+                <!-- Modal Add Categories -->
                 <div class="modal" tabindex="-1" role="dialog" id="add-category">
                     <div class="modal-dialog">
                         <div class="modal-content">

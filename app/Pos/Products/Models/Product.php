@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace Pos\Products\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Pos\Categories\Models\Category;
 use Spatie\Translatable\HasTranslations;
 
 
