@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.8",
         "mcamara/laravel-localization": "^2.0",
         "predis/predis": "^2.2",
+        "spatie/laravel-activitylog": "^4.8",
         "spatie/laravel-enum": "^3.0",
         "spatie/laravel-translatable": "^6.6"
     },
