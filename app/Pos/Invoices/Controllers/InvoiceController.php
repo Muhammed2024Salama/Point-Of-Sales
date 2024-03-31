@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Pos\Categories\Models\Category;
 use Pos\Invoices\Models\Invoice;
+use Pos\Invoices\Models\Invoices_details;
 use Pos\Products\Models\Product;
 
 class InvoiceController extends Controller
@@ -52,12 +53,12 @@ class InvoiceController extends Controller
                 'notes' => $request->notes,
             ]);
 
-            // invoice_details connection
-//            invoice_details::create([
-//                'invoice_id'=>$invoice->id,
-//                'status'=>1,
-//                'user_id'=>auth()->user()->id,
-//            ]);
+//             invoice_details connection
+            Invoices_details::create([
+                'invoice_id'=>$invoice->id,
+                'status'=>1,
+                'user_id'=>auth()->user()->id,
+            ]);
 
             DB::commit();
             session()->flash('Add', trans('Backend/invoices.Invoice added successfully'));
@@ -149,4 +150,34 @@ class InvoiceController extends Controller
         $price = Product::where('id', $id)->first()->price;
         return $price;
     }
+
+    public function payment_statusChange(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+
+            $invoice= invoice::findorFail($request->invoice_id);
+            $invoice->update([
+                'status'=>$request->status,
+            ]);
+
+            Invoices_details::create([
+                'invoice_id'=>$request->invoice_id,
+                'status'=>$request->status,
+                'payment_date'=>$request->payment_date,
+                'user_id'=>auth()->user()->id,
+            ]);
+
+            DB::commit();
+            session()->flash('Add', trans('backend/invoices.Invoice status changed successfully'));
+            return redirect()->back();
+
+        }
+        catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
+
+
 }

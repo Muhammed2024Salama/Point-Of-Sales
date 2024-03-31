@@ -42,6 +42,7 @@ Route::group(
      */
     Route::get('/product/{id}', [InvoiceController::class, 'getProduct']);
     Route::get('/price/{id}', [InvoiceController::class, 'getPrice']);
+    Route::post('Payment_status', [InvoiceController::class, 'payment_statusChange'])->name('Payment_status_change');
     Route::resource('invoices', InvoiceController::class);
 
 
