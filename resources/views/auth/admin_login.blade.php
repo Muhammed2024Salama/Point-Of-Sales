@@ -30,11 +30,11 @@
                     <div class="login-fancy pb-40 clearfix">
                         <h3 class="mb-30">Sign In To Admin</h3>
                         <div class="section-field mb-20">
-                            <form action="{{ route('login') }}" method="post">
+                            <form action="{{ route('admin.login') }}" method="post">
                                 @csrf
                                 <label class="mb-10" for="name">email* </label>
                                 <input id="email" class="web form-control" type="email" autofocus
-                                       value="{{old('email user')}}" require placeholder="email" name="email">
+                                       value="{{old('email admin')}}" require placeholder="email" name="email">
                         </div>
                         <div class="section-field mb-20">
                             <label class="mb-10" for="Password">Password* </label>
@@ -55,8 +55,8 @@
                             <i class="fa fa-check"></i>
                         </button>
 
-                        <p class="mt-20 mb-0">Don't have an account? <a href="{{route('register')}}"> Create one
-                                here</a></p>
+{{--                        <p class="mt-20 mb-0">Don't have an account? <a href="{{route('register')}}"> Create one--}}
+{{--                                here</a></p>--}}
                     </div>
 
                     </form>
